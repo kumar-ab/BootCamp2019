@@ -97,6 +97,7 @@ class ContentFilter:
     '''
     def __init__(self, fname): # This function is the constructor.
         self.filename = fname
+        self.f_open()
 
     def f_open(self):
         try:
