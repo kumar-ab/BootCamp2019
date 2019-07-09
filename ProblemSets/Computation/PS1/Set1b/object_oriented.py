@@ -98,17 +98,17 @@ class ContentFilter:
     def __init__(self, fname): # This function is the constructor.
         self.filename = fname
 
-    def _f_open(self, fname):
-        print("Hello")
+    def f_open(self):
         try:
             myfile = open(self.filename)
-            print("Hello")
         except FileNotFoundError:
             self.filename = input("Please enter a valid file name: ")
+            self.f_open()
         except TypeError:
             self.filename = input("Please enter a valid file name: ")
+            self.f_open()
         except TypeError:
             self.filename = input("Please enter a valid file name: ")
+            self.f_open()
         else:
-            self.filename.close()
-            print("OK")
+            myfile.close()
